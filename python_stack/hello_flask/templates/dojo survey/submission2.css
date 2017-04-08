@@ -1,0 +1,30 @@
+*{
+  margin: 10px;
+  padding: 0px;
+}
+#container{
+  width: 600px;
+  border: 2px dashed black;
+  font-family: sans-serif;
+}
+h1{
+  text-align: center;
+  border-bottom: 2px dotted pink;
+}
+label{
+  text-decoration: none;
+  color: blue;
+}
+form{
+  margin-left: 38px;
+  border: 2px dashed blue;
+}
+.gatheringinfo{
+  display: inline-block;
+}
+textarea{
+  display: inline-block;
+}
+li{
+  list-style: none;
+}
