@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!Remember to link all proper files>
+<!REMEMBER TO PUT FILES IN PROPER FOLDERS.>
+<!CHECK YOUR SYNTAX>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disppearing Ninja: No Ninja's Here</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="disappearingninja.css") }}">
+  </head>
+  <body>
+    <div id="container">
+      <ul class="icons">
+        <li><img class="small" src="https://www.spreadshirt.com/image-server/v1/designs/1006114326,width=178,height=178/pixel-ninja.png" alt="lilninja"></li>
+        <li><h1>No Ninjas Here</h1></li>
+        <li><img class= "small"src="https://www.spreadshirt.com/image-server/v1/designs/1006114326,width=178,height=178/pixel-ninja.png" alt="lilninja"></li>
+      </ul>
+      <a href="{{url_for("appear") }}">
+        <img class="bigninja" src="https://media.giphy.com/media/Z1q7PM3KjuuKA/giphy.gif" alt="big ninja">
+      </a>
+    </div>
+  </body>
+</html>

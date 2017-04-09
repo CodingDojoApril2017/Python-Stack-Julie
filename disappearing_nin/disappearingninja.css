@@ -1,0 +1,40 @@
+*{
+  font-family: sans-serif;
+  margin: 0px;
+  padding:0px;
+}
+#container{
+  background-image: url(https://petitspixels.com/blg/wp-content/uploads/2017/01/happy-grumpy-ninja-print-petits-pixels-510x382.png);
+  background-repeat: no-repeat;
+  width: 700px;
+  height: 700px;
+}
+h1{
+  color: red;
+  text-shadow: 2px 2px #DC0E5E;
+  text-align: center;
+}
+.small{
+  width: 110px;
+  height:100px;
+}
+ul{
+  list-style: none;
+  margin:5px;
+}
+li{
+  display: inline-block;
+  margin-right: 10px;
+}
+.bigninja{
+  margin: 60px;
+  margin-left: 120px;
+}
+.glitters{
+  height: 350px;
+  width: 438px;
+}
+.gun{
+  height: 281px;
+  width: 500px;
+}

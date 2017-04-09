@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Appears Page</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="disappearingninja.css") }}">
+  </head>
+  <body>
+    <h1>CHOOSE YOUR NINJA</h1>
+    {% if color == "deafault" %}
+    <img src="{{url_for("static",filename="ninjapics/ninjachoice.PNG")}}" alt="colorchoice">
+
+    {% elif color == "GLITTER" %}
+    <img class="glitters" src="{{url_for("static",filename="ninjapics/glitter.gif")}}" alt="glittery">
+
+    {% elif color == "GUNS" %}
+    <img class="gun" src="{{url_for("static",filename="ninjapics/ninja35.gif")}}" alt="guns">
+
+    {% elif color == "BLACK" %}
+    <img src="{{url_for("static",filename="ninjapics/extra.gif")}}" alt="extras">
+
+    {% elif color == "EXTRA" %}
+    <img src="{{url_for("static",filename="ninjapics/freeze.gif")}}" alt="icepop">
+    {% else %}
+      <img src="{{url_for("static",filename="ninjapics/ninjachoice.PNG")}}" alt="colorchoice">
+    {% endif %}
+  </body>
+</html>
