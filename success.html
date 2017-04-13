@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login/Register</title>
+  </head>
+  <body>
+    <div class="main_content">
+      <h1>On Success Page!</h1>
+      <h4>{{session['user_id'] }}</h4>
+      <form class="logout" action="/delete" method="post">
+        <button type="submit" name="button">Logout</button>
+      </form>
+    </div><!End of main content>
+  </body>
+</html>
