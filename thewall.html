@@ -1,0 +1,71 @@
+<!<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ninjabook</title>
+        <link rel="stylesheet" type="text/css" href="thewall.css">
+    </head>
+    <body>
+        <div id="transparentBox">
+            <div id="container-main">
+                <div id="nav-bar">
+                    <img src="shuriken.png" alt="shuriken"><h1> Ninjabook</h1><img src="shuriken.png" alt="shuriken">
+                        <div id="nav-links">
+                            <a href="#">Welcome {{session.user}} -san!</a>
+                            <a href="#">Log Out</a>
+                        </div>
+                        <div id="wrapper">
+
+                          <!---MESSAGE POST---->
+                            <div class="messagepost">
+                                <p>Post your terribly witty message </p>
+                                    <form action="index.html" method="post">
+                                      <textarea id="posttext" placeholder="Leave your shuriken here..." name="message"></textarea>
+                                      {% with errors = get_flashed_messages(category_filter=["posterror"]) %}
+                                           {% if errors %}
+                                           {%- for msg in errors %}
+                                           <p class="alert">{{ msg }}<p>
+                                           {% endfor -%}
+                                         {% endif %}
+                                       {% endwith %}
+                                      <button type="submit" name="button">POST IT</button>
+                                    </form>
+                            </div>
+
+                          <!---Userpost---->
+                            <div class="post">
+                              {% for message in messages %}
+                              <h3>Post</h3>
+                              <div class="postinfo">
+                                  {{ message.first_name }} {{ message.last_name }} at {{ message.created_at }}
+                              </div>
+                              <div class="msginfo">
+                                  {{ message.message }}
+                              </div>
+
+                          <!---userComments--->
+                            <form class="postComment" action="index.html" method="post">
+                              <p>Chikatsu Saisei no Jutsu</p>
+                              <label for="comment"></label>
+                              <textarea placeholder="Dattebayo..." rows="8" cols="70"></textarea>
+                              <button type="submit" name="button">BELIEVE IT</button>
+                            </form>
+                            <div class="comments">
+                              {% for comment in comments %}
+                              {% if comment.message_id == message.id %}
+                                <h3> Comment It</h3>
+                                <p>{{ comment.first_name }}:</p>
+                                <p>{{ comment.comment_text}}</p>
+                              {% endif %}
+                              {% endfor %}
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+    </body>
+</html>
