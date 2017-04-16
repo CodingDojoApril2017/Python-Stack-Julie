@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Real Portfolio</title>
+    {% load staticfiles %}
+    <!--This line tells django to be ready to listen for static files-->
+    <link rel="stylesheet" href="{% static 'first_app/css/portfolio.css' %}"media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div id="contianer">
+      <div class="header">
+        <h1>Welcome to my Portfolio!</h1>
+        <h3>My name is Julie.</h3>
+        <h3>Please, feel free to look around.</h3>
+      </div>
+      <div class="flippyimgs">
+        <a href="/about"><img src="{% static "first_app/images/aboutme.png" %}"alt="me"></a>
+        <a href="/projects"><img src="{% static "first_app/images/logo1.png" %}" alt="logo1"></a>
+        <a href="/testimonials"><img src="{% static "first_app/images/testimonials.png" %}" alt="test"></a>
+      </div>
+      <div class="contactme">
+        <p>Contact Me!</p>
+        <ul>
+          <li><p>Phone Number</p> 888-888-8888 </li>
+          <li><p>Email</p> joshuasangularbiceps@gmail.com</li>
+          <li><p>Website</p> www.samuelljakcison.com</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

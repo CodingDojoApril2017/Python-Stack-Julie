@@ -1,0 +1,47 @@
+*{
+  margin: 0px auto;
+  padding: 0px auto;
+}
+html *{
+  font-family: Verdana, Geneva, sans-serif;
+  color: #365F57
+}
+#container{
+  position: relative;
+  width: 960px;
+}
+body{
+  background-image: url("http://freedomreply.com/wp-content/uploads/2014/06/background-images-for-web-design-1.jpg");
+}
+.header{
+  border: 2px dashed purple;
+  margin: 20px;
+  text-align: center;
+}
+.header h1{
+  margin-bottom: 40px;
+}
+.header h3{
+  margin: 30px;
+}
+.flippyimgs{
+  border: 2px dashed brown;
+  margin: 20px;
+}
+img{
+  width: 350px;
+  height: 270px;
+  border: 2px dashed black;
+  margin: 20px 20px 20px 188px;
+}
+.contactme{
+  text-align: center;
+}
+.contactme li{
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+}
+.contactme p{
+  font-weight: bold;
+}
