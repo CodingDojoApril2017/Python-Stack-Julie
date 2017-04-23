@@ -13,7 +13,7 @@ class UserManager(models.Manager):
             validation_errors.append('This is too long')
 #you can also replace Users.OBjects part with 'self.create'
         if len(validation_errors) == 0:
-            C = Users.objects.create(username = request.POST['username'])
+            C = Users.objects.create(username = postData['username'])
             return (True, C)
         else:
             return (False, validation_errors)
