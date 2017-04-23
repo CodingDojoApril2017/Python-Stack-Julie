@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page: Username Enter</title>
+  </head>
+  <body>
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <h1>Enter a Username</h1>
+<!--This is where i make the form so it takes the data and redirects it-->
+<!--this is where the validations are supposed to run-->
+
+    <form action="create" method="post">
+      {% csrf_token %}
+      <h3>Username:</h3>
+      <input type="text" name="username">
+      <input class="button" type="submit" value="Enter">
+    </form>
+
+  </body>
+</html>
