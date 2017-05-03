@@ -1,0 +1,22 @@
+*{
+  width: 0px, auto;
+  height: 0px, auto;
+}
+#container{
+  font-family: 'Bungee Inline', cursive;
+}
+fieldset{
+  font-family: 'Bungee Inline', cursive;
+}
+@media(max-width:480px){
+  body{background: green;}
+}
+@media(min-width:600px){
+  body{background: purple;}
+}
+@media(min-width:1024px){
+  body{background: lightblue;}
+}
+td{
+  border-bottom:2px dashed purple;
+}

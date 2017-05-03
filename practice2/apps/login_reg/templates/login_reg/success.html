@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success Page for Login and Registration</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'login_reg/css/screenwidth.css' %}" media="screen">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <style media="screen">
+      th{
+        text-align: left;
+        border-bottom: 2px dashed purple;
+      }
+      table{
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <fieldset>
+        <legend><h2>Welcome, {{request.session.user_id}}</h2></legend>
+        <a href="/">logout</a>
+        <form action="opinion" method="post">
+          {% csrf_token %}
+          <p>Hidden: {{request.session.user_id}}</p>
+          <p>Mood: <select name="mood">
+            <option value="( ͡° ͜ʖ ͡°)">( ͡° ͜ʖ ͡°)</option>
+            <option value="•ᴗ•">•ᴗ•</option>
+            <option value="ಥ_ಥ">ಥ_ಥ </option>
+            <option value="[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]</option>
+            <option value="(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧">(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧</option>
+            <option value="凸(｀⌒´メ)凸">凸(｀⌒´メ)凸</option>
+          </select></p>
+          <p>Leave your thoughts:</p>
+          <textarea name="think" rows="5" cols="50"></textarea></p>
+          <input type="submit" name="logthinks" >
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend><h2>Other people's shift</h2></legend>
+        <table>
+          <tr>
+            <th>Users</th>
+            <th>Their thoughts</th>
+            <th>Emotions</th>
+            <th>Argue with internet peeple</th>
+          </tr>
+          <tr>
+            {% for B in bloop %}
+            <td>{{B.id}}</td>
+            <td>{{B.think}}</td>
+            <td>{{B.mood}}</td>
+            <td><a href="#">Argue with eachother</a></td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td>PLACEHOLDER</td>
+            <td>PLACEHOLDER</td>
+            <td>PLACEHOLDER</td>
+            <td>PLACEHOLDER</td>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration Page</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'login_reg/css/screenwidth.css' %}" media="screen">
+  </head>
+  <body>
+    <div id="container">
+      <fieldset>
+        <legend><h3>Register</h3></legend>
+        <!remeber to add the action to the form>
+        <!Remember to change the url paths, views, and models path if you are cutting and pasting>
+        {% for message in messages %}
+        <p>{{ message }}<p>
+        {% endfor %}
+        <form class="register" action='{% url "login_reg:process" route="register" %}' method="post">
+          {% csrf_token %}
+          <p>Name: <input type="text" name="name" value="jave" ></p>
+          <p>Username: <input type="text" name="username" value="over30"></p>
+          <!-- <p>Birthday: <input type="text" name="birth_date" ></p> -->
+          <p>Email: <input type="text" name="email" value="4@google.com"></p>
+          <p>Password: <input type="password" name="password" value="password"></p>
+          <p>Confirm Password: <input type="password" name="confirmpw" value="password"></p>
+          <input type="submit" name="register" value="Register">
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend><h3>Login</h3></legend>
+        <!remeber to add the action to the form>
+        <!Remember to change the url paths, views, and models path if you are cutting and pasting>
+        <form class="login" action='{% url "login_reg:process" route="login" %}' method="post">
+          {% csrf_token %}
+          <p>Username: <input type="text" name="username" ></p>
+          <p>Password: <input type="password" name="password" ></p>
+          <input type="submit" name="login" value="Login User">
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>
